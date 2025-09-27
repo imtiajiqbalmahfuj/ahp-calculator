@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 # ---------------- Introduction ----------------
-st.title("Step-by-Step Educational AHP Calculator")
+st.title("Advanced AHP Calculator by Imtiaj Iqbal Mahfuj")
 st.markdown("""
 This app explains **Analytic Hierarchy Process (AHP)** step by step.
 It allows anyone to calculate AHP **while learning how the calculations are done** developed by **Imtiaj Iqbal Mahfuj**.
@@ -35,15 +35,15 @@ Use reciprocals for inverse comparisons. For example, if B is moderately preferr
 
 # ---------------- Step 1: Criteria ----------------
 st.header("Step 1: Enter Criteria")
-st.markdown("These are the factors that influence your decision, e.g., Cost, Quality, Time.")
-criteria = st.text_area("Enter criteria (comma separated):", "Cost, Quality, Time")
+st.markdown("These are the factors that influence your decision, e.g., Knowledge, Quality, Beauty, Religion.")
+criteria = st.text_area("Enter criteria (comma separated):", "Knowledge, Quality, Beauty")
 criteria = [c.strip() for c in criteria.split(",") if c.strip()]
 n = len(criteria)
 
 # ---------------- Step 2: Alternatives ----------------
 st.header("Step 2: Enter Alternatives")
-st.markdown("These are the options you are deciding between, e.g., Supplier A, Supplier B, Supplier C.")
-alternatives = st.text_area("Enter alternatives (comma separated):", "Option A, Option B, Option C")
+st.markdown("These are the options you are deciding between, e.g., Partner A, Partner B, Partner C.")
+alternatives = st.text_area("Enter alternatives (comma separated):", "Partner A, Partner B, Partner C")
 alternatives = [a.strip() for a in alternatives.split(",") if a.strip()]
 m = len(alternatives)
 
