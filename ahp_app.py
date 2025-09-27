@@ -100,7 +100,7 @@ if n>1 and m>1:
     criteria_matrix = np.ones((n,n))
     for i in range(n):
         for j in range(i+1,n):
-            val = st.selectbox(f"Importance of **{criteria[i]}** vs **{criteria[j]}**:", ahp_values, index=0, key=f"crit_{i}_{j}")
+            val = st.selectbox(f"Importance of **{criteria[i]}** over **{criteria[j]}**:", ahp_values, index=0, key=f"crit_{i}_{j}")
             criteria_matrix[i,j]=val
             criteria_matrix[j,i]=1/val
 
