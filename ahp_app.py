@@ -89,6 +89,9 @@ def ahp_calculation(matrix):
 
     return priority_vector, CR
 
+# ---------------- Allowed values for AHP ----------------
+ahp_values = [1,2,3,4,5,6,7,8,9, 1/2,1/3,1/4,1/5,1/6,1/7,1/8,1/9]
+
 # ---------------- Step 3: Pairwise Comparison ----------------
 if n>1 and m>1:
     st.header("Step 3: Pairwise Comparison of Criteria")
@@ -97,7 +100,7 @@ if n>1 and m>1:
     criteria_matrix = np.ones((n,n))
     for i in range(n):
         for j in range(i+1,n):
-            val = st.number_input(f"Importance of **{criteria[i]}** vs **{criteria[j]}**:", min_value=0.01, max_value=9.0, value=1.0, step=0.01, format="%.2f", key=f"crit_{i}_{j}")
+            val = st.selectbox(f"Importance of **{criteria[i]}** vs **{criteria[j]}**:", ahp_values, index=0, key=f"crit_{i}_{j}")
             criteria_matrix[i,j]=val
             criteria_matrix[j,i]=1/val
 
@@ -115,7 +118,8 @@ if n>1 and m>1:
         alt_matrix = np.ones((m,m))
         for i in range(m):
             for j in range(i+1,m):
-                val = st.number_input(f"How much more does **{alternatives[i]}** satisfy {c} than **{alternatives[j]}**?", min_value=0.01, max_value=9.0, value=1.0, step=0.01, format="%.2f", key=f"alt_{c_idx}_{i}_{j}")
+                val = st.selectbox(f"How much more does **{alternatives[i]}** satisfy {c} than **{alternatives[j]}**?", ahp_values, index=0, key=f"alt_{c_idx}_{i}_{j}")
+                alt_matrix[i,j]=val
                 alt_matrix[j,i]=1/val
 
         alt_df = pd.DataFrame(alt_matrix, index=alternatives, columns=alternatives)
