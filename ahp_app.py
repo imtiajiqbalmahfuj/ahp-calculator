@@ -35,7 +35,7 @@ Use reciprocals for inverse comparisons. For example, if B is moderately preferr
 
 # ---------------- Step 1: Criteria ----------------
 st.header("Step 1: Enter Criteria")
-st.markdown("These are the factors that influence your decision, Suppose you are selecting the best partner to get married. The factors might include: knowledge, character/personality/values, beauty, and religion.")
+st.markdown("These are the factors that influence your decision. Suppose you are selecting the best partner to get married. The factors might include: knowledge, character/personality/values, beauty, and religion.")
 criteria = st.text_area("Enter criteria (comma separated):", "Knowledge, personality, Beauty")
 criteria = [c.strip() for c in criteria.split(",") if c.strip()]
 n = len(criteria)
