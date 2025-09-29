@@ -256,10 +256,6 @@ The TFN represents uncertainty in a single comparison. A crisp 3 (moderate) ofte
 5. Check **consistency** in AHP and interpret results.  
 
 """)
-    st.subheader("TFN visual example")
-    st.markdown("Below is a clear TFN triangle showing l, m, u and their meaning.")
-    overview_tfn_plot(2.0, 3.0, 4.0)
-
 
     st.subheader("AHP formulas")
     st.markdown("**Given** pairwise matrix \(A = [a_{ij}]\) (size \(n\times n\)) where \(a_{ji} = 1/a_{ij}\).")
